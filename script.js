@@ -6,40 +6,8 @@
 const GITHUB_OWNER = "bilal7533-sec";
 const GITHUB_API = `https://api.github.com/users/${GITHUB_OWNER}/repos?per_page=100&sort=updated`;
 
-const featuredPortfolioProjects = [
-  {
-    id: "host-integrity-monitoring",
-    name: "Enterprise Host Integrity Monitoring Lab",
-    title: "Enterprise Rootkit Detection & Host Integrity Monitoring",
-    category: "Threat Detection",
-    description:
-      "Enterprise-style Linux detection lab covering baseline integrity, chkrootkit, rkhunter, OSSEC, simulated suspicious indicators, alert triage, investigation, remediation and verification.",
-    tags: ["Linux", "chkrootkit", "rkhunter", "OSSEC", "HIDS", "Threat Detection"],
-    html_url: "https://github.com/bilal7533-sec/bilal7533-sec.github.io/tree/main/projects/enterprise-rootkit-detection",
-    updated_at: new Date().toISOString(),
-    stargazers_count: 0,
-    forks_count: 0,
-    fork: false,
-    archived: false,
-    isPortfolioProject: true
-  },
-  {
-    id: "enterprise-ldap-pam-security-lab",
-    name: "Enterprise Linux IAM PAM Security Lab",
-    title: "Enterprise Linux IAM / PAM / OpenLDAP Security Engineering Lab",
-    category: "IAM / PAM",
-    description:
-      "Three-server enterprise IAM lab covering OpenLDAP, SSSD, NSS, PAM, password security, pam_faillock, SSH group authorization, least-privilege sudo/RBAC, JML lifecycle, LDAP TLS, troubleshooting, validation and NCA ECC evidence.",
-    tags: ["OpenLDAP", "SSSD", "PAM", "LDAP TLS", "RBAC", "NCA ECC"],
-    html_url: "https://bilal7533-sec.github.io/projects/enterprise-ldap-pam-security-lab/web/",
-    updated_at: new Date().toISOString(),
-    stargazers_count: 0,
-    forks_count: 0,
-    archived: false,
-    isPortfolioProject: true,
-    returnParam: "enterprise-ldap-pam-security-lab"
-  }
-];
+const featuredPortfolioProjects = [];
+
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#navLinks");
@@ -220,13 +188,8 @@ async function loadGitHubProjects() {
     .filter((repo) => !repo.fork && !repo.archived && repo.name !== `${GITHUB_OWNER}.github.io`)
     .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
-  const combinedProjects = [
-    ...featuredPortfolioProjects,
-    ...visibleRepos
-  ];
-
-  renderFilters(combinedProjects);
-  renderProjects(combinedProjects);
+  renderFilters(visibleRepos);
+  renderProjects(visibleRepos);
 }
 
 function observeReveals(root = document) {
