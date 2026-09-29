@@ -6,6 +6,25 @@
 const GITHUB_OWNER = "bilal7533-sec";
 const GITHUB_API = `https://api.github.com/users/${GITHUB_OWNER}/repos?per_page=100&sort=updated`;
 
+const featuredPortfolioProjects = [
+  {
+    id: "host-integrity-monitoring",
+    name: "Enterprise Host Integrity Monitoring Lab",
+    title: "Enterprise Rootkit Detection & Host Integrity Monitoring",
+    category: "Threat Detection",
+    description:
+      "Enterprise-style Linux detection lab covering baseline integrity, chkrootkit, rkhunter, OSSEC, simulated suspicious indicators, alert triage, investigation, remediation and verification.",
+    tags: ["Linux", "chkrootkit", "rkhunter", "OSSEC", "HIDS", "Threat Detection"],
+    html_url: "https://github.com/bilal7533-sec/bilal7533-sec.github.io#projects",
+    updated_at: new Date().toISOString(),
+    stargazers_count: 0,
+    forks_count: 0,
+    fork: false,
+    archived: false,
+    isPortfolioProject: true
+  }
+];
+
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("#navLinks");
 
