@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Enterprise Linux IAM, PAM and OpenLDAP security engineering lab by Bilal Ahmad.">
+<title>Enterprise Linux IAM / PAM Lab | Bilal Ahmad</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1a2b;--line:rgba(148,163,184,.16);--text:#e6edf6;--muted:#9fb0c5;--accent:#56d6c9;--accent2:#7da8ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);background:radial-gradient(circle at 10% 0%,rgba(86,214,201,.08),transparent 30rem),var(--bg);line-height:1.65}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}a{color:inherit}.top{padding:70px 0 42px;border-bottom:1px solid var(--line)}.eyebrow{font:600 .75rem ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;color:var(--accent)}h1{font-size:clamp(2.3rem,6vw,4.8rem);line-height:1.03;letter-spacing:-.05em;margin:14px 0}h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;color:transparent}.lead{max-width:830px;color:var(--muted);font-size:1.05rem}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;padding:11px 16px;border:1px solid var(--line);border-radius:12px;text-decoration:none;font-weight:700}.btn.primary{background:var(--text);color:var(--bg)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.card{background:rgba(13,26,43,.78);border:1px solid var(--line);border-radius:18px;padding:20px}.stat strong{display:block;font-size:1.65rem}.stat span{color:var(--muted);font-size:.82rem}section{padding:62px 0;border-bottom:1px solid rgba(255,255,255,.035)}h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:8px 0 22px;letter-spacing:-.04em}.flow{padding:20px;border:1px solid var(--line);border-radius:16px;background:#030a13;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#c7d5e5}.phases{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.phase{border:1px solid var(--line);border-radius:14px;padding:16px;background:rgba(255,255,255,.02)}.phase b{color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.phase p{margin:7px 0 0;color:var(--muted);font-size:.9rem}.stack{display:flex;flex-wrap:wrap;gap:8px}.stack span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:#b9cadc;font-size:.78rem}.nca{overflow:auto}.nca table{width:100%;border-collapse:collapse}.nca th,.nca td{padding:11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.nca td{color:var(--muted);font-size:.88rem}.note{border-left:3px solid var(--accent);padding:14px 16px;background:rgba(86,214,201,.04);color:var(--muted)}footer{padding:30px 0;color:var(--muted);font-size:.82rem}@media(max-width:800px){.grid,.phases{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap">
+<div class="eyebrow">CYBERSECURITY ENGINEERING LAB / IAM / PAM</div>
+<h1>Enterprise Linux <span>Identity & Access Management</span></h1>
+<p class="lead">Three-server OpenLDAP + SSSD + NSS + PAM environment covering centralized identity, password security, failed-login protection, SSH authorization, least-privilege sudo/RBAC, Joiner-Mover-Leaver lifecycle, LDAP TLS, troubleshooting, validation and NCA ECC evidence mapping.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/bilal7533-sec/bilal7533-sec.github.io/tree/main/projects/enterprise-ldap-pam-security-lab" target="_blank" rel="noreferrer">Open GitHub Lab ↗</a>
+<a class="btn" href="../../#projects">Back to Portfolio</a>
+</div>
+<div class="grid">
+<div class="card stat"><strong>3</strong><span>Linux servers</span></div>
+<div class="card stat"><strong>70</strong><span>Master implementation activities</span></div>
+<div class="card stat"><strong>18</strong><span>Implementation phases</span></div>
+</div>
+</div>
+</header>
+<main>
+<section><div class="wrap">
+<div class="eyebrow">ARCHITECTURE</div><h2>Central identity with layered authorization</h2>
+<div class="flow">User → SSH → PAM → pam_sss → SSSD → LDAP → Identity / Groups → PAM account rules → SSH AllowGroups → sudo / RBAC → Linux resource</div>
+<div class="grid">
+<div class="card"><b>SERVER-01</b><p>192.168.149.128<br>LDAP client + SSSD + PAM + SSH + controlled local break-glass identity.</p></div>
+<div class="card"><b>SERVER-02</b><p>192.168.149.129<br>LDAP01 — OpenLDAP central identity and password-policy authority.</p></div>
+<div class="card"><b>SERVER-03</b><p>192.168.149.130<br>Second enterprise Linux LDAP/SSSD/PAM client.</p></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<div class="eyebrow">SECURITY STACK</div><h2>What was used</h2>
+<div class="stack">
+<span>OpenLDAP</span><span>SSSD</span><span>NSS</span><span>PAM</span><span>pam_sss</span><span>pam_mkhomedir</span><span>pam_faillock</span><span>OpenSSH</span><span>sudo</span><span>RBAC</span><span>LDAP ppolicy</span><span>TLS / X.509</span><span>/etc/hosts</span><span>auth.log</span><span>journalctl</span>
+</div>
+</div></section>
+<section><div class="wrap">
+<div class="eyebrow">IMPLEMENTATION</div><h2>18 phases / complete workflow</h2>
+<div class="phases">
+<div class="phase"><b>01</b> Infrastructure & Architecture<p>Server roles, network and authentication model.</p></div>
+<div class="phase"><b>02</b> Basic Preparation<p>Patching, hostnames, hosts file, break-glass account.</p></div>
+<div class="phase"><b>03</b> OpenLDAP<p>Directory tree, OUs, groups and centralized identity.</p></div>
+<div class="phase"><b>04</b> SSSD / LDAP Client<p>Identity provider integration, NSS and SSSD validation.</p></div>
+<div class="phase"><b>05</b> PAM Authentication<p>PAM stack, pam_sss and automatic home directory.</p></div>
+<div class="phase"><b>06</b> Password Security<p>Central password policy and policy separation.</p></div>
+<div class="phase"><b>07</b> Failed Login Protection<p>pam_faillock threshold, lockout and recovery testing.</p></div>
+<div class="phase"><b>08</b> SSH Security<p>Root restriction and LDAP group-based remote access.</p></div>
+<div class="phase"><b>09</b> Sudo / Privileged Access<p>Least privilege and command-scoped RBAC.</p></div>
+<div class="phase"><b>10</b> IAM Lifecycle<p>Joiner, Mover and Leaver workflows.</p></div>
+<div class="phase"><b>11</b> Security Testing<p>Unauthorized and privileged access scenarios.</p></div>
+<div class="phase"><b>12</b> Authentication Logging<p>SSH, PAM, SSSD and sudo evidence.</p></div>
+<div class="phase"><b>13</b> Production Security<p>Lab-versus-production security boundaries.</p></div>
+<div class="phase"><b>14</b> LDAP TLS<p>CA, certificate trust, STARTTLS/LDAPS and SSSD TLS.</p></div>
+<div class="phase"><b>15</b> PAM Troubleshooting<p>Network → LDAP → SSSD → NSS → PAM → SSH → Authorization.</p></div>
+<div class="phase"><b>16</b> Security Validation<p>Consolidated IAM/PAM security test matrix.</p></div>
+<div class="phase"><b>17</b> NCA ECC Mapping<p>Evidence mapping for IAM controls.</p></div>
+<div class="phase"><b>18</b> Enterprise Implementation<p>Operational model and enterprise JML examples.</p></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<div class="eyebrow">TARGET CONTROLS</div><h2>Lab security policy</h2>
+<div class="grid">
+<div class="card"><b>Password policy</b><p>Minimum 12 characters, 90-day maximum age, history 5.</p></div>
+<div class="card"><b>Failed authentication</b><p>5 failures, 15-minute failure window, 15-minute unlock window.</p></div>
+<div class="card"><b>SSH authorization</b><p>Direct root login disabled; approved LDAP groups only.</p></div>
+</div>
+<div class="note">These are documented lab targets. Exact module behavior must be validated on the deployed Ubuntu/OpenLDAP/SSSD versions before production use.</div>
+</div></section>
+<section><div class="wrap">
+<div class="eyebrow">NCA ECC 2:2024</div><h2>IAM evidence model</h2>
+<div class="nca"><table><thead><tr><th>Control</th><th>Lab evidence</th><th>Implementation status</th></tr></thead><tbody>
+<tr><td>2-2-1</td><td>IAM requirements, architecture and access policy documentation.</td><td>Demonstrated/documented</td></tr>
+<tr><td>2-2-2</td><td>OpenLDAP, SSSD, NSS, PAM, SSH and sudo implementation.</td><td>Demonstrated</td></tr>
+<tr><td>2-2-3-1</td><td>Username/password authentication through LDAP + PAM/SSSD.</td><td>Demonstrated</td></tr>
+<tr><td>2-2-3-2</td><td>MFA for applicable remote and privileged access.</td><td>Production extension / gap in this lab</td></tr>
+<tr><td>2-2-3-3</td><td>Group-based authorization, least privilege and role separation.</td><td>Demonstrated</td></tr>
+<tr><td>2-2-3-4</td><td>Privileged LDAP role and restricted sudo.</td><td>Demonstrated</td></tr>
+<tr><td>2-2-3-5</td><td>JML and periodic access-review procedure/evidence.</td><td>Demonstrated/documented</td></tr>
+<tr><td>2-2-4</td><td>Periodic IAM implementation review procedure.</td><td>Demonstrated/documented</td></tr>
+</tbody></table></div>
+<p class="note">NCA ECC 2:2024 identifies 2-2 as Identity and Access Management. The 2024 document clarifies 2-2-3-1 and expands the MFA wording for remote access and privileged accounts. This page intentionally does not claim MFA is implemented in this lab.</p>
+</div></section>
+</main>
+<footer><div class="wrap">Bilal Ahmad · Enterprise Linux IAM / PAM Security Engineering Lab · <a href="https://github.com/bilal7533-sec">GitHub</a></div></footer>
+</body>
+</html>
