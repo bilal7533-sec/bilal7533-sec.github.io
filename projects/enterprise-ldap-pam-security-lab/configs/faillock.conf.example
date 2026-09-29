@@ -1,0 +1,6 @@
+# Target failed-authentication protection for the lab.
+# Apply through the PAM mechanism supported by the installed Ubuntu release.
+deny = 5
+fail_interval = 900
+unlock_time = 900
+# Optional hardening decisions should be reviewed before production use.
