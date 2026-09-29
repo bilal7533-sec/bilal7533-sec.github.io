@@ -1,39 +1,75 @@
-# Bilal Ahmad — Cybersecurity Portfolio
+# Bilal Ahmad — Cyber Security Portfolio
 
-Live portfolio: https://bilal7533-sec.github.io/
+Live site: https://bilal7533-sec.github.io/
 
-## Automatic GitHub Projects
+A responsive, evidence-focused cybersecurity portfolio covering SOC operations, Linux security, IAM/PAM, vulnerability management, cloud security, application security and OT/ICS.
 
-The Projects section is connected directly to the public GitHub API for **bilal7533-sec**.
+## Website features
 
-### How to add a project
+- Recruiter-focused profile and capability overview.
+- Featured cybersecurity projects presented as interactive case studies.
+- Project search and category filters.
+- Automatic discovery of new public GitHub repositories.
+- Interview Room with technical discussion prompts.
+- Security control → implementation → evidence view.
+- Attack → Detect → Investigate → Respond workflow.
+- Responsive design for desktop and mobile.
 
-You do **not** need to edit `index.html`, `script.js`, or `style.css`.
+## Project experience
 
-1. Create a new **public** repository under `bilal7533-sec`.
-2. Add a clear repository description on GitHub.
-3. Add repository topics when useful, for example:
-   - `soc`
-   - `linux-security`
-   - `hardening`
-   - `owasp`
-   - `threat-hunting`
-   - `scada`
-4. Wait for GitHub Pages to deploy and refresh the portfolio.
+- Enterprise Linux IAM / PAM / OpenLDAP Security Engineering
+- Enterprise Rootkit Detection & Host Integrity Monitoring
+- SOC / Threat Hunting
+- Linux Hardening
+- Vulnerability Assessment / Reporting
+- SCADA / ICS Security
+- Sigma Detection Engineering
+- Apache / Linux Server Security
+- rsyslog mTLS security work
 
-The website automatically:
-- reads public repositories from GitHub;
-- ignores forks and archived repositories;
-- sorts projects by most recently updated;
-- generates project cards;
-- creates security categories from repository names, descriptions and topics;
-- provides category filters;
-- links each card directly to its GitHub repository.
+## Website architecture
 
-### Important
+index.html
+style.css
+app.js
+data/projects.js
+projects/<project documentation>
 
-The GitHub API is public and rate-limited. If the API temporarily fails, the Projects section shows a fallback link to the GitHub profile instead of breaking the rest of the portfolio.
+data/projects.js contains curated case-study metadata. app.js also queries the public GitHub API so future public repositories can appear automatically.
 
-## Repository
+## Adding a new project
 
-https://github.com/bilal7533-sec/bilal7533-sec.github.io
+Create a public repository under bilal7533-sec. Add a clear repository description and useful GitHub topics. The portfolio will discover the repository automatically.
+
+For a deeper recruiter/interviewer experience, add the project as a curated entry in data/projects.js with:
+
+- Security problem
+- Architecture / stack
+- Validation
+- Evidence
+- Tags
+- Production considerations
+- Case-study details
+
+## Existing project documentation
+
+The repository contains detailed lab documentation under projects/, including the Enterprise Linux IAM/PAM lab and Enterprise Rootkit Detection lab.
+
+## Safety and evidence
+
+Do not commit passwords, private keys, tokens, bind credentials or sensitive production data.
+
+Claims in project pages should distinguish between:
+
+- Demonstrated in the lab
+- Documented procedure
+- Production consideration
+- Not implemented / future extension
+
+## Portfolio methodology
+
+Concept → Architecture → Implementation → Validation → Troubleshooting → Evidence → Security reasoning → Control mapping
+
+## GitHub
+
+https://github.com/bilal7533-sec
