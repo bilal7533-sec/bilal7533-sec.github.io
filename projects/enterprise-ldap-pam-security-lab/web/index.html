@@ -94,11 +94,11 @@
 <script>
 (() => {
   const params = new URLSearchParams(window.location.search);
-  const returnId = params.get("return");
+  const returnId = params.get("returnProject");
   const back = document.getElementById("backToPortfolio");
 
   if (back && returnId && /^[a-z0-9-]+$/i.test(returnId)) {
-    back.href = "https://bilal7533-sec.github.io/#project-" + returnId;
+    back.href = "https://bilal7533-sec.github.io/?returnProject=" + encodeURIComponent(returnId);
   }
 })();
 </script>
