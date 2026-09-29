@@ -95,11 +95,11 @@ function renderFilters() {
   root.innerHTML = categories.map((category) => `
     <button class="filter ${category === activeCategory ? "active" : ""}" type="button"
       data-category="${esc(category)}">
-      <span class="filter-name">${esc(category)}</span>
+      ${esc(category)}
     </button>
   `).join("");
 
-  $(".filter", root).forEach((button) => {
+  $$(".filter", root).forEach((button) => {
     button.addEventListener("click", () => {
       activeCategory = button.dataset.category || "All";
       renderFilters();
@@ -149,18 +149,11 @@ function projectCard(project, index) {
   `;
 }
 
-function updateProjectTotal() {
-  const total = $("#projectTotal");
-  if (!total) return;
-  total.textContent = allProjects.length;
-}
-
 function renderProjects() {
   const root = $("#projectsGrid");
   const empty = $("#projectEmpty");
   if (!root) return;
 
-  updateProjectTotal();
   const filtered = allProjects.filter(matches);
 
   root.innerHTML = filtered.map(projectCard).join("");
