@@ -124,7 +124,7 @@ function projectCard(repo, index) {
         <span>Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
       </div>
 
-      <a class="project-link" href="${escapeHtml(repo.html_url)}${repo.returnParam ? (repo.html_url.includes("?") ? "&" : "?") + "returnProject=" + encodeURIComponent(repo.returnParam) : ""}" target="_blank" rel="noopener noreferrer">
+      <a class="project-link" href="${escapeHtml(repo.html_url)}${repo.returnParam ? (repo.html_url.includes("?") ? "&" : "?") + "returnProject=" + encodeURIComponent(repo.returnParam) : ""}">
         View on GitHub <span>↗</span>
       </a>
     </article>
