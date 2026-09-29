@@ -173,6 +173,18 @@ function renderProjects(repos, filter = "All") {
 
   grid.innerHTML = filtered.map(projectCard).join("");
   observeReveals(grid);
+
+  // Preserve deep-link navigation back to the originating project card.
+  if (window.location.hash.startsWith("#project-")) {
+    requestAnimationFrame(() => {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+        target.classList.add("return-highlight");
+        window.setTimeout(() => target.classList.remove("return-highlight"), 1800);
+      }
+    });
+  }
 }
 
 function renderError() {
