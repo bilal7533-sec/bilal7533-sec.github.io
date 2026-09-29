@@ -22,6 +22,21 @@ const featuredPortfolioProjects = [
     fork: false,
     archived: false,
     isPortfolioProject: true
+  },
+  {
+    id: "enterprise-ldap-pam-security-lab",
+    name: "Enterprise Linux IAM PAM Security Lab",
+    title: "Enterprise Linux IAM / PAM / OpenLDAP Security Engineering Lab",
+    category: "IAM / PAM",
+    description:
+      "Three-server enterprise IAM lab covering OpenLDAP, SSSD, NSS, PAM, password security, pam_faillock, SSH group authorization, least-privilege sudo/RBAC, JML lifecycle, LDAP TLS, troubleshooting, validation and NCA ECC evidence.",
+    tags: ["OpenLDAP", "SSSD", "PAM", "LDAP TLS", "RBAC", "NCA ECC"],
+    html_url: "https://bilal7533-sec.github.io/projects/enterprise-ldap-pam-security-lab/web/",
+    updated_at: new Date().toISOString(),
+    stargazers_count: 0,
+    forks_count: 0,
+    archived: false,
+    isPortfolioProject: true
   }
 ];
 
