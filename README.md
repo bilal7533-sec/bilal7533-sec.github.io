@@ -1,65 +1,39 @@
 # Bilal Ahmad — Cybersecurity Portfolio
 
-A responsive, static cybersecurity portfolio built with plain HTML, CSS and JavaScript.
+Live portfolio: https://bilal7533-sec.github.io/
 
-## Files
+## Automatic GitHub Projects
 
-- `index.html` — page structure/content
-- `style.css` — responsive design and animations
-- `script.js` — mobile menu, reveal animations, active navigation and year
-- `README.md` — setup/deployment notes
+The Projects section is connected directly to the public GitHub API for **bilal7533-sec**.
 
-## Run locally
+### How to add a project
 
-Open `index.html` in a browser.
+You do **not** need to edit `index.html`, `script.js`, or `style.css`.
 
-For a local development server:
+1. Create a new **public** repository under `bilal7533-sec`.
+2. Add a clear repository description on GitHub.
+3. Add repository topics when useful, for example:
+   - `soc`
+   - `linux-security`
+   - `hardening`
+   - `owasp`
+   - `threat-hunting`
+   - `scada`
+4. Wait for GitHub Pages to deploy and refresh the portfolio.
 
-```bash
-python -m http.server 8000
-```
+The website automatically:
+- reads public repositories from GitHub;
+- ignores forks and archived repositories;
+- sorts projects by most recently updated;
+- generates project cards;
+- creates security categories from repository names, descriptions and topics;
+- provides category filters;
+- links each card directly to its GitHub repository.
 
-Then visit `http://localhost:8000`.
+### Important
 
-## Deploy free with GitHub Pages
+The GitHub API is public and rate-limited. If the API temporarily fails, the Projects section shows a fallback link to the GitHub profile instead of breaking the rest of the portfolio.
 
-1. Create a repository named `bilal7533-sec.github.io`
-2. Upload `index.html`, `style.css`, `script.js`, and `README.md`
-3. Open the repository:
-   `Settings → Pages`
-4. Set:
-   `Deploy from a branch → main → /(root)`
-5. Save.
+## Repository
 
-Your free site will be available at:
-
-`https://bilal7533-sec.github.io/`
-
-## Customize before publishing
-
-Search the files for these placeholders and replace them:
-
-- `https://www.linkedin.com/` → your actual LinkedIn profile
-- `your-email@example.com` → your actual email
-- GitHub project URLs → individual repository URLs
-- Add your CV as `assets/Bilal-Ahmad-CV.pdf` and change a button/link to point to it
-
-## Recommended project repository format
-
-For each project, document:
-
-Concept → Enterprise Scenario → Architecture → Commands → Config → Expected Output → Verification → Troubleshooting → Security Reasoning → NCA/NIST/CIS/OWASP Mapping → Resume Achievement.
-
-## Security / privacy note
-
-Do not publish:
-
-- passwords
-- private keys
-- live IPs from production environments
-- internal hostnames
-- customer/company confidential data
-- screenshots containing sensitive information
-- tokens, API keys or secrets
-
-Use sanitized lab data and screenshots.
+https://github.com/bilal7533-sec/bilal7533-sec.github.io
