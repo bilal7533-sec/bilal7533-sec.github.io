@@ -864,3 +864,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   border-color: rgba(86,214,201,0.75);
   box-shadow: 0 0 0 3px rgba(86,214,201,0.08), 0 20px 60px rgba(0,0,0,0.32);
 }
+
+#project-enterprise-ldap-pam-security-lab {
+  scroll-margin-top: 100px;
+}
+
+#project-enterprise-ldap-pam-security-lab:target {
+  border-color: rgba(86,214,201,0.75);
+  box-shadow: 0 0 0 3px rgba(86,214,201,0.08), 0 20px 60px rgba(0,0,0,0.32);
+}
