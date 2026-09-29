@@ -1,0 +1,7 @@
+# Reference sshd hardening fragment. Validate with sshd -t before reload.
+UsePAM yes
+PermitRootLogin no
+PasswordAuthentication yes
+KbdInteractiveAuthentication no
+AllowGroups linux-users linux-admins
+# Add stronger controls such as MFA according to the production identity architecture.
