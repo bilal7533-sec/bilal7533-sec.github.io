@@ -15,7 +15,7 @@ const featuredPortfolioProjects = [
     description:
       "Enterprise-style Linux detection lab covering baseline integrity, chkrootkit, rkhunter, OSSEC, simulated suspicious indicators, alert triage, investigation, remediation and verification.",
     tags: ["Linux", "chkrootkit", "rkhunter", "OSSEC", "HIDS", "Threat Detection"],
-    html_url: "https://github.com/bilal7533-sec/bilal7533-sec.github.io#projects",
+    html_url: "https://github.com/bilal7533-sec/bilal7533-sec.github.io/tree/main/projects/enterprise-rootkit-detection",
     updated_at: new Date().toISOString(),
     stargazers_count: 0,
     forks_count: 0,
