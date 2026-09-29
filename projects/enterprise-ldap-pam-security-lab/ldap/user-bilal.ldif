@@ -1,0 +1,11 @@
+dn: uid=bilal,ou=People,dc=corp,dc=example
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: Bilal Ahmad
+sn: Ahmad
+uid: bilal
+uidNumber: 20001
+gidNumber: 20000
+homeDirectory: /home/bilal
+loginShell: /bin/bash
