@@ -111,16 +111,4 @@ const PROJECTS = [
     tags: ["Apache","Linux","Web Server","systemd"],
     link: "https://github.com/bilal7533-sec/Apache-Server"
   },
-  {
-    id: "rsyslog",
-    title: "rsyslog mTLS Infrastructure",
-    category: "Secure Logging",
-    description: "Secure centralized logging architecture using TCP/TLS, X.509 certificates and protected transport.",
-    problem: "Move infrastructure logs centrally without exposing log transport to passive interception or unauthenticated endpoints.",
-    stack: "rsyslog • TCP 6514 • TLS 1.3 • X.509 • CA",
-    validation: "Certificate trust, transport, queue behavior and receiver validation.",
-    evidence: "TLS configuration, certificate workflow and troubleshooting evidence.",
-    tags: ["rsyslog","mTLS","TLS 1.3","X.509"],
-    link: "https://github.com/bilal7533-sec/bilal7533-sec.github.io/tree/main/projects/enterprise-rootkit-detection"
-  }
-];
+;
