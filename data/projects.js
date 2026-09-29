@@ -110,5 +110,5 @@ const PROJECTS = [
     evidence: "Server configuration and operational notes.",
     tags: ["Apache","Linux","Web Server","systemd"],
     link: "https://github.com/bilal7533-sec/Apache-Server"
-  },
-;
+  }
+];
