@@ -1,5 +1,7 @@
 # Enterprise Linux IAM / PAM / OpenLDAP Security Engineering Lab
 
+**Portfolio project page:** https://bilal7533-sec.github.io/projects/enterprise-ldap-pam-security-lab/web/
+
 A complete three-server Linux identity and access management laboratory covering centralized identity, authentication, authorization, privileged access, password security, failed-login protection, SSH controls, Joiner-Mover-Leaver lifecycle, TLS, troubleshooting, validation and NCA ECC evidence mapping.
 
 ## What this project demonstrates
@@ -208,12 +210,14 @@ The NCA ECC 2:2024 defines 2-2 as Identity and Access Management. It includes re
 ## Repository structure
 
 architecture/ contains the network and trust-boundary model.
+concepts-and-components.md contains the security concepts and responsibility boundaries.
+implemented-state.md distinguishes demonstrated controls from production extensions.
 phases/ contains one document per implementation phase.
 configs/ contains safe example configuration fragments.
 ldap/ contains directory hierarchy, group and user LDIF examples.
 tests/ contains validation scenarios and expected outcomes.
 jml/ contains Joiner-Mover-Leaver workflows.
-troubleshooting/ contains layer-by-layer diagnostic procedures.
+troubleshooting/ contains layer-by-layer diagnostic procedures and real lab lessons learned.
 evidence/ contains evidence-index guidance.
 reports/ contains the final incident/security report template.
 web/ contains the project landing page shown from the portfolio.
