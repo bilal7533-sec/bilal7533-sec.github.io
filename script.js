@@ -58,13 +58,15 @@ function prettyName(name) {
 }
 
 function classify(repo) {
+  if (repo.category) return repo.category;
+
   const text = [
     repo.name,
     repo.description,
     ...(repo.topics || [])
   ].join(" ").toLowerCase();
 
-  if (/soc|sigma|siem|threat|hunt|detection|incident/.test(text)) return "SOC / Detection";
+  if (/soc|sigma|siem|threat|hunt|detection|incident|rootkit|integrity/.test(text)) return "SOC / Detection";
   if (/scada|ics|ot|industrial/.test(text)) return "OT / ICS";
   if (/vulnerab|qualys|cve|security.?report/.test(text)) return "Vulnerability";
   if (/appsec|owasp|application|web.?security/.test(text)) return "Application Security";
@@ -82,7 +84,7 @@ function repoTags(repo) {
 
 function projectCard(repo, index) {
   const category = classify(repo);
-  const title = prettyName(repo.name);
+  const title = repo.title || prettyName(repo.name);
   const description = repo.description || "Cybersecurity project and hands-on engineering work.";
   const tags = repoTags(repo);
 
@@ -185,11 +187,16 @@ async function loadGitHubProjects() {
   const repos = await response.json();
 
   const visibleRepos = repos
-    .filter((repo) => !repo.fork && !repo.archived)
+    .filter((repo) => !repo.fork && !repo.archived && repo.name !== `${GITHUB_OWNER}.github.io`)
     .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
-  renderFilters(visibleRepos);
-  renderProjects(visibleRepos);
+  const combinedProjects = [
+    ...featuredPortfolioProjects,
+    ...visibleRepos
+  ];
+
+  renderFilters(combinedProjects);
+  renderProjects(combinedProjects);
 }
 
 function observeReveals(root = document) {
