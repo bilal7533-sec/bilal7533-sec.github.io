@@ -36,7 +36,8 @@ const featuredPortfolioProjects = [
     stargazers_count: 0,
     forks_count: 0,
     archived: false,
-    isPortfolioProject: true
+    isPortfolioProject: true,
+    returnParam: "enterprise-ldap-pam-security-lab"
   }
 ];
 
@@ -104,7 +105,7 @@ function projectCard(repo, index) {
   const tags = repoTags(repo);
 
   return `
-    <article class="project-card reveal ${index === 0 ? "featured" : ""}">
+    <article id="project-${escapeHtml(repo.id || repo.name)}" class="project-card reveal ${index === 0 ? "featured" : ""}">
       <div class="project-top">
         <span class="project-number">GITHUB ${String(index + 1).padStart(2, "0")}</span>
         <span class="status">${escapeHtml(category)}</span>
@@ -123,7 +124,7 @@ function projectCard(repo, index) {
         <span>Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
       </div>
 
-      <a class="project-link" href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer">
+      <a class="project-link" href="${escapeHtml(repo.html_url)}${repo.returnParam ? (repo.html_url.includes("?") ? "&" : "?") + "return=" + encodeURIComponent(repo.returnParam) : ""}" target="_blank" rel="noopener noreferrer">
         View on GitHub <span>↗</span>
       </a>
     </article>
