@@ -1,0 +1,15 @@
+dn: ou=People,dc=corp,dc=example
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Groups,dc=corp,dc=example
+objectClass: organizationalUnit
+ou: Groups
+
+dn: ou=Admins,dc=corp,dc=example
+objectClass: organizationalUnit
+ou: Admins
+
+dn: ou=Policies,dc=corp,dc=example
+objectClass: organizationalUnit
+ou: Policies
