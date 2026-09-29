@@ -90,24 +90,14 @@ function renderFilters() {
   const root = $("#filters");
   if (!root) return;
 
-  const categoryCounts = allProjects.reduce((counts, project) => {
-    counts[project.category] = (counts[project.category] || 0) + 1;
-    return counts;
-  }, {});
-
   const categories = ["All", ...new Set(allProjects.map((project) => project.category))];
 
-  root.innerHTML = categories.map((category) => {
-    const count = category === "All" ? allProjects.length : (categoryCounts[category] || 0);
-
-    return `
-      <button class="filter ${category === activeCategory ? "active" : ""}" type="button"
-        data-category="${esc(category)}" aria-label="${esc(category)}: ${count} project${count === 1 ? "" : "s"}">
-        <span class="filter-name">${esc(category)}</span>
-        <span class="filter-count">${count}</span>
-      </button>
-    `;
-  }).join("");
+  root.innerHTML = categories.map((category) => `
+    <button class="filter ${category === activeCategory ? "active" : ""}" type="button"
+      data-category="${esc(category)}">
+      <span class="filter-name">${esc(category)}</span>
+    </button>
+  `).join("");
 
   $(".filter", root).forEach((button) => {
     button.addEventListener("click", () => {
@@ -159,11 +149,18 @@ function projectCard(project, index) {
   `;
 }
 
+function updateProjectTotal() {
+  const total = $("#projectTotal");
+  if (!total) return;
+  total.textContent = allProjects.length;
+}
+
 function renderProjects() {
   const root = $("#projectsGrid");
   const empty = $("#projectEmpty");
   if (!root) return;
 
+  updateProjectTotal();
   const filtered = allProjects.filter(matches);
 
   root.innerHTML = filtered.map(projectCard).join("");
