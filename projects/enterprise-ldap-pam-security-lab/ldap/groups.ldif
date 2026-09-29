@@ -1,0 +1,14 @@
+dn: cn=linux-users,ou=Groups,dc=corp,dc=example
+objectClass: posixGroup
+cn: linux-users
+gidNumber: 20000
+
+dn: cn=linux-admins,ou=Groups,dc=corp,dc=example
+objectClass: posixGroup
+cn: linux-admins
+gidNumber: 20001
+
+dn: cn=security-admins,ou=Groups,dc=corp,dc=example
+objectClass: posixGroup
+cn: security-admins
+gidNumber: 20002
