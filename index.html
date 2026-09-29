@@ -1,365 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bilal Ahmad — Cyber Security Engineer, SOC Analyst and Application Security Analyst portfolio." />
-  <meta name="theme-color" content="#07111f" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bilal Ahmad — Cyber Security Engineer, SOC Analyst and Application Security portfolio.">
+  <meta name="theme-color" content="#07101c">
   <title>Bilal Ahmad | Cyber Security Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
 
-  <header class="site-header" id="top">
-    <nav class="container nav" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="Bilal Ahmad home">
-        <span class="brand-mark">&gt;_</span>
-        <span>Bilal Ahmad</span>
+  <header class="header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Bilal Ahmad home">
+        <span class="brand-chip">BA</span>
+        <span>
+          <strong>Bilal Ahmad</strong>
+          <small>Cyber Security Engineering</small>
+        </span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <div class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
+        <a href="#experience">Experience</a>
+        <a href="#method">Approach</a>
+        <a href="#interview">Interview Room</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero container" id="home">
+    <section class="hero container">
       <div class="hero-copy reveal">
-        <p class="eyebrow">CYBERSECURITY • LINUX • SOC • IAM</p>
-        <h1>Securing systems.<br><span>Engineering resilience.</span></h1>
-        <p class="hero-text">
-          Cyber Security Engineer with hands-on experience across SOC operations,
-          Linux security, incident response, vulnerability management, cloud security,
-          IAM/PAM and application security.
+        <div class="status-line"><span class="pulse"></span> CYBERSECURITY ENGINEERING PORTFOLIO</div>
+        <p class="kicker">SOC • LINUX SECURITY • IAM/PAM • APPSEC • CLOUD • OT/ICS</p>
+        <h1>Secure the system.<br><span>Understand the signal.</span></h1>
+        <p class="hero-lead">
+          Security engineering work presented as evidence — architecture, implementation, validation,
+          troubleshooting, incident reasoning and control mapping.
         </p>
-
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Explore Projects <span>→</span></a>
-          <a class="btn btn-secondary" href="https://github.com/bilal7533-sec" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn btn-primary" href="#projects">Explore Security Work <span>→</span></a>
+          <a class="btn btn-ghost" href="https://github.com/bilal7533-sec" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
         </div>
 
-        <div class="stats">
-          <div class="stat">
-            <strong>4.5+</strong>
-            <span>Years Cybersecurity</span>
-          </div>
-          <div class="stat">
-            <strong>L1/L2</strong>
-            <span>SOC Operations</span>
-          </div>
-          <div class="stat">
-            <strong>NCA</strong>
-            <span>ECC Focus</span>
-          </div>
+        <div class="hero-metrics">
+          <div><strong>4.5+</strong><span>Years cybersecurity</span></div>
+          <div><strong>L1/L2</strong><span>SOC operations</span></div>
+          <div><strong>IAM</strong><span>Identity & access</span></div>
+          <div><strong>NCA</strong><span>ECC-focused work</span></div>
         </div>
       </div>
 
-      <div class="terminal-card reveal" aria-label="Cybersecurity profile terminal">
-        <div class="terminal-bar">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-          <span class="terminal-title">bilal@security:~</span>
+      <aside class="hero-console reveal" aria-label="Security engineering console">
+        <div class="console-top">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="console-title">bilal@security-lab:~</span>
         </div>
-        <div class="terminal-body">
+        <div class="console-body">
           <p><span class="prompt">$</span> whoami</p>
-          <p class="command-output">Bilal Ahmad</p>
-
-          <p><span class="prompt">$</span> cat focus.txt</p>
-          <p class="command-output">
-            SOC &amp; Threat Detection<br />
-            Linux Security &amp; Hardening<br />
-            IAM / PAM<br />
-            Vulnerability Management<br />
-            AWS Cloud Security<br />
-            Application Security
-          </p>
-
-          <p><span class="prompt">$</span> echo $MISSION</p>
-          <p class="command-output">Build. Harden. Detect. Respond.<span class="cursor">▋</span></p>
+          <p class="out">Bilal Ahmad</p>
+          <p><span class="prompt">$</span> focus</p>
+          <p class="out muted">SOC / Threat Detection<br>Linux Hardening<br>IAM / PAM<br>Vulnerability Management<br>Application Security<br>OT / ICS</p>
+          <p><span class="prompt">$</span> methodology</p>
+          <p class="out">Concept → Architecture → Implement → Validate → Troubleshoot → Document</p>
+          <p><span class="prompt">$</span> mission</p>
+          <p class="out accent">Build. Harden. Detect. Respond.<span class="cursor">▋</span></p>
         </div>
-      </div>
+      </aside>
     </section>
 
     <section class="section container" id="about">
-      <div class="section-heading reveal">
+      <div class="section-head reveal">
         <p class="eyebrow">01 / ABOUT</p>
-        <h2>Security engineering with operational depth.</h2>
+        <h2>Operational security, not just tool lists.</h2>
       </div>
-
-      <div class="about-grid reveal">
-        <div class="about-copy">
-          <p>
-            I work at the intersection of cybersecurity operations and secure infrastructure.
-            My experience includes SOC monitoring, incident response, Linux administration,
-            vulnerability management, cloud security and application security.
-          </p>
-          <p>
-            I build practical security labs to turn concepts into repeatable engineering
-            evidence — architecture, configuration, verification, troubleshooting and control mapping.
-          </p>
+      <div class="about-grid">
+        <div class="about-story reveal">
+          <p>I work across defensive operations and secure infrastructure: security monitoring, Linux administration, incident response, vulnerability management, cloud security, IAM/PAM and application security.</p>
+          <p>My labs are structured like engineering work. I document why a control exists, how the architecture works, how it is implemented, how it fails, how it is verified and what evidence an auditor or SOC analyst would actually inspect.</p>
         </div>
-
-        <div class="about-panel">
-          <div class="panel-row"><span>Primary focus</span><strong>Defensive Security</strong></div>
-          <div class="panel-row"><span>Core platform</span><strong>Linux / RHEL / Ubuntu</strong></div>
-          <div class="panel-row"><span>Security tooling</span><strong>ELK / Splunk / QRadar</strong></div>
-          <div class="panel-row"><span>Frameworks</span><strong>NCA ECC / NIST / OWASP</strong></div>
+        <div class="proof-panel reveal">
+          <div class="proof-row"><span>Core platforms</span><strong>RHEL • Ubuntu • AWS</strong></div>
+          <div class="proof-row"><span>SOC stack</span><strong>Elastic / ELK • Splunk • QRadar</strong></div>
+          <div class="proof-row"><span>Security controls</span><strong>CIS • NIST • NCA ECC • OWASP</strong></div>
+          <div class="proof-row"><span>Infrastructure</span><strong>Linux • SSH • IAM • PAM • TLS</strong></div>
+          <div class="proof-row"><span>Engineering</span><strong>Docker • Kubernetes • Ansible</strong></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="experience">
+    <section class="section alt" id="capabilities">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">02 / EXPERIENCE</p>
-          <h2>Professional experience.</h2>
+        <div class="section-head reveal">
+          <p class="eyebrow">02 / CAPABILITIES</p>
+          <h2>Where I build depth.</h2>
+          <p class="section-sub">Each capability is tied to implementation work, not just a keyword list.</p>
         </div>
+        <div class="cap-grid">
+          <article class="cap-card reveal"><span class="cap-num">01</span><h3>SOC & Detection</h3><p>Alert triage, log analysis, threat hunting, incident response and investigation workflows.</p><div class="tag-list"><span>Elastic</span><span>Splunk</span><span>QRadar</span><span>Sigma</span></div></article>
+          <article class="cap-card reveal"><span class="cap-num">02</span><h3>Linux Security</h3><p>Hardening, service analysis, secure access, firewalling, baselines and operational troubleshooting.</p><div class="tag-list"><span>RHEL</span><span>Ubuntu</span><span>CIS</span><span>OpenSCAP</span></div></article>
+          <article class="cap-card reveal"><span class="cap-num">03</span><h3>IAM / PAM</h3><p>Central identity, SSSD, NSS, PAM, password controls, SSH authorization and privileged access.</p><div class="tag-list"><span>OpenLDAP</span><span>SSSD</span><span>PAM</span><span>RBAC</span></div></article>
+          <article class="cap-card reveal"><span class="cap-num">04</span><h3>Vulnerability Management</h3><p>Assessment, validation, remediation tracking and security baseline verification.</p><div class="tag-list"><span>Qualys</span><span>CIS</span><span>OpenSCAP</span><span>Remediation</span></div></article>
+          <article class="cap-card reveal"><span class="cap-num">05</span><h3>Cloud & Platform Security</h3><p>Security-aware infrastructure operations across cloud and containerized environments.</p><div class="tag-list"><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Ansible</span></div></article>
+          <article class="cap-card reveal"><span class="cap-num">06</span><h3>Application & OT Security</h3><p>OWASP-focused application security practice and security thinking for SCADA/ICS environments.</p><div class="tag-list"><span>OWASP</span><span>Secure SDLC</span><span>SCADA</span><span>IEC 62443</span></div></article>
+        </div>
+      </div>
+    </section>
 
+    <section class="section container" id="projects">
+      <div class="section-head reveal">
+        <p class="eyebrow">03 / PROJECTS</p>
+        <h2>GitHub projects</h2>
+        <p class="section-sub">Selected projects are presented as case studies: problem, architecture, controls, validation and lessons learned.</p>
+      </div>
+
+      <div class="project-toolbar reveal">
+        <div class="filter-wrap" id="filters" role="toolbar" aria-label="Project filters"></div>
+        <label class="search-box"><span>⌕</span><input id="projectSearch" type="search" placeholder="Search projects or technologies" autocomplete="off"></label>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+      <div class="project-empty" id="projectEmpty" hidden>No project matches your search.</div>
+    </section>
+
+    <section class="section alt" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">04 / EXPERIENCE</p>
+          <h2>Professional foundation.</h2>
+        </div>
         <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div>
-                  <span class="timeline-date">2023 — 2026</span>
-                  <h3>Cyber Security Engineer</h3>
-                  <p class="company">Siemens Saudi Arabia</p>
-                </div>
-                <span class="tag">Enterprise Security</span>
-              </div>
-              <ul class="clean-list">
-                <li>Supported SOC L1/L2 monitoring, security event analysis, incident response and remediation.</li>
-                <li>Administered Linux systems and implemented security controls across enterprise environments.</li>
-                <li>Worked with ELK/Elastic, AWS security, IDS/IPS, firewalls and vulnerability-management workflows.</li>
-                <li>Applied security requirements and practices aligned with NCA ECC, NIST, CIS and operational procedures.</li>
-                <li>Supported SCADA/ICS security testing, patching, configuration validation and disaster-recovery activities.</li>
-              </ul>
-              <div class="tech-row">
-                <span>Linux</span><span>Elastic</span><span>AWS</span><span>Qualys</span><span>OpenSCAP</span><span>ServiceNow</span>
-              </div>
-            </div>
+          <article class="timeline-card reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-meta"><span>2023 — 2026</span><span>Enterprise Security</span></div>
+            <h3>Cyber Security Engineer</h3>
+            <p class="org">Siemens Saudi Arabia</p>
+            <ul><li>SOC L1/L2 monitoring, event analysis, incident response and remediation.</li><li>Linux administration and security control implementation.</li><li>Elastic/ELK, AWS security, IDS/IPS, firewalling and vulnerability workflows.</li><li>Security practices across NCA ECC, NIST, CIS and operational procedures.</li><li>SCADA/ICS testing, patching, configuration validation and DR activities.</li></ul>
           </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-top">
-                <div>
-                  <span class="timeline-date">2021 — 2022</span>
-                  <h3>Linux Administrator</h3>
-                  <p class="company">Nextbridge Pakistan</p>
-                </div>
-                <span class="tag">Linux Infrastructure</span>
-              </div>
-              <ul class="clean-list">
-                <li>Managed RHEL/Ubuntu systems, services and operational troubleshooting.</li>
-                <li>Worked with systemctl, journalctl, storage, RAID/LVM, RBAC and routine administration.</li>
-                <li>Supported system availability, secure access and configuration management.</li>
-              </ul>
-              <div class="tech-row">
-                <span>RHEL</span><span>Ubuntu</span><span>systemd</span><span>RAID</span><span>LVM</span><span>RBAC</span>
-              </div>
-            </div>
+          <article class="timeline-card reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-meta"><span>2021 — 2022</span><span>Linux Infrastructure</span></div>
+            <h3>Linux Administrator</h3>
+            <p class="org">Nextbridge Pakistan</p>
+            <ul><li>RHEL/Ubuntu administration, service troubleshooting and operational support.</li><li>systemd, journalctl, RAID/LVM, RBAC and routine Linux administration.</li><li>Secure access, availability and configuration management.</li></ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section container" id="skills">
-      <div class="section-heading reveal">
-        <p class="eyebrow">03 / SKILLS</p>
-        <h2>Security stack.</h2>
+    <section class="section container" id="method">
+      <div class="section-head reveal">
+        <p class="eyebrow">05 / SECURITY APPROACH</p>
+        <h2>How I solve a security problem.</h2>
       </div>
-
-      <div class="skills-grid">
-        <article class="skill-card reveal">
-          <div class="skill-icon">01</div>
-          <h3>SOC &amp; Detection</h3>
-          <p>Log analysis, alert triage, threat detection, incident response and investigation.</p>
-          <div class="tag-list"><span>Elastic / ELK</span><span>Splunk</span><span>QRadar</span><span>Threat Hunting</span></div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-icon">02</div>
-          <h3>Linux Security</h3>
-          <p>Secure administration, hardening, service analysis, firewalling and configuration validation.</p>
-          <div class="tag-list"><span>RHEL</span><span>Ubuntu</span><span>systemd</span><span>nftables</span></div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-icon">03</div>
-          <h3>IAM / PAM</h3>
-          <p>Centralized identity, authentication controls, PAM, SSSD, RBAC and SSH restrictions.</p>
-          <div class="tag-list"><span>OpenLDAP</span><span>SSSD</span><span>PAM</span><span>SSH</span></div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-icon">04</div>
-          <h3>Vulnerability Mgmt</h3>
-          <p>Vulnerability assessment, remediation tracking and security baseline validation.</p>
-          <div class="tag-list"><span>Qualys</span><span>OpenSCAP</span><span>CIS</span><span>Remediation</span></div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-icon">05</div>
-          <h3>Cloud &amp; DevOps Security</h3>
-          <p>Cloud security practices and security-aware infrastructure operations.</p>
-          <div class="tag-list"><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Ansible</span></div>
-        </article>
-
-        <article class="skill-card reveal">
-          <div class="skill-icon">06</div>
-          <h3>Application Security</h3>
-          <p>Secure SDLC thinking, OWASP Top 10 and application-focused security assessment.</p>
-          <div class="tag-list"><span>OWASP Top 10</span><span>Secure SDLC</span><span>AppSec</span></div>
-        </article>
+      <div class="method-grid">
+        <div class="method-card reveal"><span>01</span><h3>Concept</h3><p>Define the security objective and control purpose.</p></div>
+        <div class="method-card reveal"><span>02</span><h3>Architecture</h3><p>Map trust boundaries, flows, identities and dependencies.</p></div>
+        <div class="method-card reveal"><span>03</span><h3>Implementation</h3><p>Apply configuration with explicit security reasoning.</p></div>
+        <div class="method-card reveal"><span>04</span><h3>Validation</h3><p>Test normal behavior, negative cases and expected failures.</p></div>
+        <div class="method-card reveal"><span>05</span><h3>Troubleshooting</h3><p>Isolate the failing layer, capture evidence and fix root cause.</p></div>
+        <div class="method-card reveal"><span>06</span><h3>Evidence</h3><p>Document the result for operations, audit and interview discussion.</p></div>
       </div>
     </section>
 
-    <section class="section section-alt" id="projects">
+    <section class="section alt" id="response">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">04 / PROJECTS</p>
-          <h2>GitHub projects</h2>
-          <p class="section-subtitle">
-            Real-world security engineering, built through hands-on labs, defensive architecture,
-            controlled testing, troubleshooting and measurable validation.
-          </p>
+        <div class="section-head reveal">
+          <p class="eyebrow">06 / INCIDENT THINKING</p>
+          <h2>Attack → Detect → Investigate → Respond.</h2>
         </div>
-
-        <div class="project-controls reveal" aria-label="Project filters">
-          <div id="project-filters" class="project-filters"></div>
-          <span id="project-count" class="project-count">Loading projects…</span>
+        <div class="response-flow reveal">
+          <div><span>01</span><strong>Detect</strong><p>Alert, log, anomaly or integrity change.</p></div>
+          <i>→</i><div><span>02</span><strong>Validate</strong><p>Check whether the signal is real or expected.</p></div>
+          <i>→</i><div><span>03</span><strong>Scope</strong><p>Host, user, source IP, process, file and network.</p></div>
+          <i>→</i><div><span>04</span><strong>Respond</strong><p>Contain, remediate, verify and document.</p></div>
         </div>
-
-        <article class="project-card featured reveal visible">
-          <div class="project-top">
-            <span class="project-number">LAB 01</span>
-            <span class="status">Threat Detection</span>
-          </div>
-          <h3>Enterprise Rootkit Detection &amp; Host Integrity Monitoring</h3>
-          <p>
-            Enterprise-style Linux detection lab covering rootkit concepts, baseline integrity,
-            chkrootkit, rkhunter, OSSEC, controlled suspicious indicators, alert triage,
-            investigation, remediation and verification. The lab uses safe simulations rather
-            than deploying a real rootkit.
-          </p>
-          <div class="project-flow">
-            <span>Baseline</span><b>→</b><span>Detect</span><b>→</b><span>Alert</span><b>→</b><span>Investigate</span><b>→</b><span>Remediate</span><b>→</b><span>Verify</span>
-          </div>
-          <div class="tag-list">
-            <span>Linux</span><span>chkrootkit</span><span>rkhunter</span><span>OSSEC</span><span>HIDS</span><span>Host Integrity</span>
-          </div>
-          <div class="project-meta">
-            <span>Enterprise architecture</span>
-            <span>4-VM design</span>
-            <span>Safe simulation</span>
-          </div>
-          <div class="project-link">
-            <span>Featured lab</span>
-          </div>
-        </article>
-
-        <article id="project-enterprise-ldap-pam-security-lab" class="project-card featured reveal">
-          <div class="project-top">
-            <span class="project-number">FEATURED LAB</span>
-            <span class="status">IAM / PAM</span>
-          </div>
-          <h3>Enterprise Linux IAM / PAM / OpenLDAP Security Engineering Lab</h3>
-          <p>
-            Three-server enterprise IAM lab covering OpenLDAP, SSSD, NSS, PAM, password security,
-            pam_faillock, SSH group authorization, least-privilege sudo/RBAC, Joiner-Mover-Leaver
-            lifecycle, LDAP TLS, troubleshooting, validation and NCA ECC evidence.
-          </p>
-          <div class="tag-list">
-            <span>OpenLDAP</span><span>SSSD</span><span>NSS</span><span>PAM</span>
-            <span>pam_faillock</span><span>LDAP TLS</span><span>RBAC</span><span>NCA ECC</span>
-          </div>
-          <div class="project-meta">
-            <span>3-server architecture</span>
-            <span>18 phases</span>
-            <span>70 activities</span>
-          </div>
-          <a class="project-link" href="projects/enterprise-ldap-pam-security-lab/web/">
-            Open complete lab <span>↗</span>
-          </a>
-        </article>
-
-        <div id="project-grid" class="projects-grid" aria-live="polite">
-          <div class="project-state">
-            <span class="loader" aria-hidden="true"></span>
-            <p>Loading GitHub repositories…</p>
-          </div>
-        </div>
-
-        <div class="project-note reveal">
-          <span class="note-icon">↳</span>
-          <p><strong>Adding a project:</strong> create a public repository under <code>bilal7533-sec</code>.
-          No portfolio HTML changes are required.</p>
-        </div>
+        <div class="hunt-box reveal"><p class="eyebrow">THREAT-HUNTING CHAIN</p><p class="hunt-chain">Source IP <b>→</b> User <b>→</b> SSH Login <b>→</b> Success/Failure <b>→</b> Process <b>→</b> sudo <b>→</b> Sensitive File</p></div>
       </div>
     </section>
 
-    <section class="section container" id="methodology">
-      <div class="section-heading reveal">
-        <p class="eyebrow">05 / APPROACH</p>
-        <h2>How I document security work.</h2>
+    <section class="section container" id="controls">
+      <div class="section-head reveal">
+        <p class="eyebrow">07 / CONTROL EVIDENCE</p>
+        <h2>Security control → implementation → proof.</h2>
       </div>
+      <div class="control-table reveal">
+        <div class="control-row head"><span>Area</span><span>Implementation</span><span>Evidence</span></div>
+        <div class="control-row"><span>IAM</span><span>OpenLDAP + SSSD + NSS</span><span>LDAP queries, getent, id</span></div>
+        <div class="control-row"><span>Authentication</span><span>PAM + pam_sss</span><span>SSH/PAM logs, test results</span></div>
+        <div class="control-row"><span>Lockout</span><span>pam_faillock</span><span>faillock output, failed-login test</span></div>
+        <div class="control-row"><span>Remote access</span><span>OpenSSH + AllowGroups</span><span>sshd -t, auth logs</span></div>
+        <div class="control-row"><span>Privilege</span><span>sudo + LDAP RBAC</span><span>sudo -l, sudo logs</span></div>
+        <div class="control-row"><span>Transport</span><span>LDAP TLS / X.509</span><span>certificate validation</span></div>
+        <div class="control-row"><span>Compliance</span><span>NCA ECC / NIST / CIS / OWASP</span><span>control mapping & evidence index</span></div>
+      </div>
+    </section>
 
-      <div class="method-grid reveal">
-        <div class="method-step"><span>01</span><strong>Concept</strong><p>Understand the security objective and why the control exists.</p></div>
-        <div class="method-step"><span>02</span><strong>Architecture</strong><p>Map servers, trust boundaries, authentication and data flows.</p></div>
-        <div class="method-step"><span>03</span><strong>Implementation</strong><p>Apply commands and configuration with security-focused comments.</p></div>
-        <div class="method-step"><span>04</span><strong>Verification</strong><p>Prove the intended behavior and test failure scenarios.</p></div>
-        <div class="method-step"><span>05</span><strong>Troubleshooting</strong><p>Capture logs, symptoms, root cause and corrective action.</p></div>
-        <div class="method-step"><span>06</span><strong>Control Mapping</strong><p>Relate technical controls to NCA ECC, NIST, CIS or OWASP where applicable.</p></div>
+    <section class="section alt" id="interview">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">08 / INTERVIEW ROOM</p>
+          <h2>Questions I am ready to discuss.</h2>
+          <p class="section-sub">Use the project details as discussion points during a technical interview.</p>
+        </div>
+        <div class="interview-grid" id="interviewGrid"></div>
       </div>
     </section>
 
     <section class="section contact-section" id="contact">
-      <div class="container contact-card reveal">
-        <div>
-          <p class="eyebrow">06 / CONTACT</p>
-          <h2>Let’s connect.</h2>
-          <p>For cybersecurity roles, technical collaboration and security engineering discussions.</p>
-        </div>
-
-        <div class="contact-links">
-          <a href="https://github.com/bilal7533-sec" target="_blank" rel="noreferrer">
-            <span>GitHub</span><strong>bilal7533-sec ↗</strong>
-          </a>
-          <a href="https://github.com/bilal7533-sec" target="_blank" rel="noreferrer">
-            <span>GitHub</span><strong>Public repositories ↗</strong>
-          </a>
-        </div>
+      <div class="container contact-panel reveal">
+        <div><p class="eyebrow">09 / CONNECT</p><h2>Technical work should be inspectable.</h2><p>Explore the projects, implementation notes and security reasoning, then connect through GitHub for the complete public work.</p></div>
+        <a class="btn btn-primary" href="https://github.com/bilal7533-sec" target="_blank" rel="noopener noreferrer">Open GitHub Profile ↗</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Bilal Ahmad</span>
-      <a href="#top">Back to top ↑</a>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container footer-inner"><span>© <span id="year"></span> Bilal Ahmad</span><a href="#top">Back to top ↑</a></div></footer>
 
-  <script src="portfolio-projects.js"></script>
-  <script src="script.js"></script>
+  <div class="modal" id="caseModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close" data-close-modal>×</button>
+      <p class="eyebrow" id="modalCategory"></p>
+      <h2 id="modalTitle"></h2>
+      <p class="modal-summary" id="modalSummary"></p>
+      <div class="modal-grid">
+        <div><span>Security problem</span><p id="modalProblem"></p></div>
+        <div><span>Architecture / stack</span><p id="modalStack"></p></div>
+        <div><span>Validation</span><p id="modalValidation"></p></div>
+        <div><span>Evidence</span><p id="modalEvidence"></p></div>
+      </div>
+      <div id="modalBody"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </article>
+  </div>
+
+  <script src="data/projects.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
