@@ -1,3 +1,6 @@
+// Enable enhanced reveal animation while keeping a non-JavaScript fallback visible.
+document.documentElement.classList.add("js-ready");
+
 // ============================================================
 // Bilal Ahmad — Cyber Security Portfolio v2
 // Interactive case studies + search/filter + GitHub discovery.
