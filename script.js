@@ -124,7 +124,7 @@ function projectCard(repo, index) {
         <span>Updated ${new Date(repo.updated_at).toLocaleDateString()}</span>
       </div>
 
-      <a class="project-link" href="${escapeHtml(repo.html_url)}${repo.returnParam ? (repo.html_url.includes("?") ? "&" : "?") + "return=" + encodeURIComponent(repo.returnParam) : ""}" target="_blank" rel="noopener noreferrer">
+      <a class="project-link" href="${escapeHtml(repo.html_url)}${repo.returnParam ? (repo.html_url.includes("?") ? "&" : "?") + "returnProject=" + encodeURIComponent(repo.returnParam) : ""}" target="_blank" rel="noopener noreferrer">
         View on GitHub <span>↗</span>
       </a>
     </article>
@@ -174,14 +174,16 @@ function renderProjects(repos, filter = "All") {
   grid.innerHTML = filtered.map(projectCard).join("");
   observeReveals(grid);
 
-  // Preserve deep-link navigation back to the originating project card.
-  if (window.location.hash.startsWith("#project-")) {
+  // Return directly to the project card that opened this lab.
+  const returnProject = new URLSearchParams(window.location.search).get("returnProject");
+  if (returnProject && /^[a-z0-9-]+$/i.test(returnProject)) {
     requestAnimationFrame(() => {
-      const target = document.querySelector(window.location.hash);
+      const target = document.getElementById("project-" + returnProject);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "center" });
         target.classList.add("return-highlight");
-        window.setTimeout(() => target.classList.remove("return-highlight"), 1800);
+        window.setTimeout(() => target.classList.remove("return-highlight"), 2200);
+        history.replaceState(null, "", window.location.pathname + "#project-" + returnProject);
       }
     });
   }
