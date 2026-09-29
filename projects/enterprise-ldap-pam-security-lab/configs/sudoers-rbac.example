@@ -1,0 +1,5 @@
+# Example role-based sudo policy. Validate command paths on the target OS.
+# Keep the file under /etc/sudoers.d/ with restrictive ownership and permissions.
+%linux-admins ALL=(root) /usr/bin/systemctl status *, /usr/bin/journalctl -u *
+%security-admins ALL=(root) /usr/sbin/sshd -t, /usr/bin/journalctl
+# Do not copy this exact scope into production without reviewing command arguments and risk.
