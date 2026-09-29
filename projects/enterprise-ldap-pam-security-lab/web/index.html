@@ -93,12 +93,9 @@
 <footer><div class="wrap">Bilal Ahmad · Enterprise Linux IAM / PAM Security Engineering Lab · <a href="https://github.com/bilal7533-sec">GitHub</a></div></footer>
 <script>
 (() => {
-  const params = new URLSearchParams(window.location.search);
-  const returnId = params.get("returnProject");
   const back = document.getElementById("backToPortfolio");
-
-  if (back && returnId && /^[a-z0-9-]+$/i.test(returnId)) {
-    back.href = "https://bilal7533-sec.github.io/?returnProject=" + encodeURIComponent(returnId);
+  if (back) {
+    back.href = "https://bilal7533-sec.github.io/#project-enterprise-ldap-pam-security-lab";
   }
 })();
 </script>
