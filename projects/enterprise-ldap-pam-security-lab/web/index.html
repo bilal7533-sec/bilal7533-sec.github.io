@@ -18,7 +18,7 @@
 <p class="lead">Three-server OpenLDAP + SSSD + NSS + PAM environment covering centralized identity, password security, failed-login protection, SSH authorization, least-privilege sudo/RBAC, Joiner-Mover-Leaver lifecycle, LDAP TLS, troubleshooting, validation and NCA ECC evidence mapping.</p>
 <div class="actions">
 <a class="btn primary" href="https://github.com/bilal7533-sec/bilal7533-sec.github.io/tree/main/projects/enterprise-ldap-pam-security-lab" target="_blank" rel="noreferrer">Open GitHub Lab ↗</a>
-<a class="btn" href="https://bilal7533-sec.github.io/#projects">Back to Portfolio</a>
+<a class="btn" id="backToPortfolio" href="https://bilal7533-sec.github.io/#projects">Back to Portfolio</a>
 </div>
 <div class="grid">
 <div class="card stat"><strong>3</strong><span>Linux servers</span></div>
@@ -91,5 +91,16 @@
 </div></section>
 </main>
 <footer><div class="wrap">Bilal Ahmad · Enterprise Linux IAM / PAM Security Engineering Lab · <a href="https://github.com/bilal7533-sec">GitHub</a></div></footer>
+<script>
+(() => {
+  const params = new URLSearchParams(window.location.search);
+  const returnId = params.get("return");
+  const back = document.getElementById("backToPortfolio");
+
+  if (back && returnId && /^[a-z0-9-]+$/i.test(returnId)) {
+    back.href = "https://bilal7533-sec.github.io/#project-" + returnId;
+  }
+})();
+</script>
 </body>
 </html>
