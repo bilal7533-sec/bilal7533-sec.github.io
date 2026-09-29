@@ -4,6 +4,30 @@ A practical, enterprise-style Linux threat detection and host integrity monitori
 
 > **Safety boundary:** This lab does not deploy or install a real rootkit. Detection capability is validated with controlled, harmless suspicious artifacts, integrity changes, persistence indicators and test events.
 
+## Repository structure
+
+```text
+enterprise-rootkit-detection/
+├── README.md
+├── architecture/
+│   └── architecture.md
+├── scripts/
+│   ├── rootkit-chkrootkit-scan.sh
+│   ├── safe-detection-simulation.sh
+│   └── investigation-collection.sh
+├── ossec/
+│   ├── syscheck-example.conf
+│   └── rootcheck-example.conf
+├── investigation/
+│   └── investigation-checklist.md
+├── reports/
+│   └── incident-report-template.md
+└── evidence/
+    └── README.md
+```
+
+The configuration files under `ossec/` are **reference fragments**, not blind drop-in replacements. Validate them against the exact OSSEC release and existing manager/agent configuration before deployment.
+
 ## Objectives
 
 - Understand rootkit concepts and detection limitations.
