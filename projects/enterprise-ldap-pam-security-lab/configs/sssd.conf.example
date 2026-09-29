@@ -1,0 +1,24 @@
+# Reference configuration for the lab. Review against the deployed Ubuntu/SSSD release.
+# Never place reusable secrets in this file.
+[sssd]
+config_file_version = 2
+services = nss, pam, ssh
+domains = corp.example
+
+[nss]
+fallback_homedir = /home/%u
+
+[pam]
+
+[domain/corp.example]
+id_provider = ldap
+auth_provider = ldap
+chpass_provider = ldap
+ldap_uri = ldap://LDAP01
+ldap_search_base = dc=corp,dc=example
+ldap_schema = rfc2307
+cache_credentials = true
+enumerate = false
+# For production authentication, use TLS and certificate validation.
+# ldap_id_use_start_tls = true
+# ldap_tls_reqcert = demand
