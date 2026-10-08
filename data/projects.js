@@ -1,5 +1,25 @@
 const PROJECTS = [
   {
+    id: "enterprise-ansible-fleet",
+    title: "Enterprise Ansible Linux Fleet — 30 Server Automation",
+    category: "Infrastructure Automation",
+    featured: true,
+    description: "Production-style Ansible reference architecture for a 30-server heterogeneous RHEL/Ubuntu estate spanning web, application, PostgreSQL/MariaDB, infrastructure, monitoring and backup tiers.",
+    problem: "Standardize secure Linux operations across a mixed operating-system fleet while keeping changes repeatable, reviewable and safe to roll out.",
+    stack: "Ansible • RHEL • Ubuntu • SSH • sudo • systemd • UFW/firewalld • PostgreSQL • MariaDB • GitHub Actions",
+    validation: "Inventory graphing, syntax checks, check mode, OS-specific execution, serial patching, handlers, service verification and CI linting.",
+    evidence: "30-node inventory, role structure, security baseline, SSH hardening, firewall controls, patch orchestration, verification playbook, architecture and security-control documentation.",
+    tags: ["Ansible","RHEL","Ubuntu","30 Servers","Linux Hardening","Patch Management"],
+    link: "https://github.com/bilal7533-sec/bilal-sec",
+    details: {
+      objective: "Build an enterprise-grade automation pattern that can manage a 30-server Linux estate consistently across web, application, database and operations tiers.",
+      architecture: "Control Node → SSH/sudo → common baseline → security hardening → SSH policy → firewall → tier roles → handlers → verification.",
+      controls: ["OS-aware automation","Rolling patching","Least privilege service accounts","SSH hardening","Firewall policy","Auditd","CI validation","Vault-ready secrets"],
+      phases: "30 managed servers / 15 Ubuntu + 15 RHEL / 6 web + 10 application + 6 database + 8 operations",
+      production: "Production extensions include MFA/PAM, centralized secrets, SIEM/logging, vulnerability management, HA databases, immutable backup and formal change-ticket integration."
+    }
+  },
+  {
     id: "iam-pam",
     title: "Enterprise Linux IAM / PAM / OpenLDAP",
     category: "IAM / PAM",
