@@ -1,0 +1,34 @@
+name: Portfolio JavaScript Validation
+
+on:
+  push:
+    paths:
+      - "app.js"
+      - "data/projects.js"
+      - ".github/workflows/portfolio-js-validation.yml"
+  pull_request:
+    paths:
+      - "app.js"
+      - "data/projects.js"
+      - ".github/workflows/portfolio-js-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate JavaScript syntax
+        run: |
+          node --check app.js
+          node --check data/projects.js
