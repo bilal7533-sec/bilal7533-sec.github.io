@@ -20,26 +20,6 @@ const PROJECTS = [
     }
   }
   {
-    id: "enterprise-linux-user-access-management",
-    title: "Enterprise Linux User, Group & Access Management Automation with Ansible",
-    category: "Infrastructure Automation",
-    featured: true,
-    description: "Data-driven Ansible lab for local Linux account provisioning, group lifecycle, shell and home-directory changes, least-access permissions, idempotency and independent verification.",
-    problem: "Make account and group changes consistent and auditable while reducing manual configuration drift and catching access-related errors.",
-    stack: "Ansible • YAML • Linux users/groups • UID/GID • SSH/sudo • getent • id • stat • Ansible Lint",
-    validation: "Playbook syntax checks, check mode, repeat-run idempotency review, getent lookups, effective group membership, home ownership/mode assertions and GitHub Actions validation.",
-    evidence: "Seven requested playbooks, central vars/users.yml, safe localhost inventory, runbook, architecture notes, security-control context, test matrix and CI workflow.",
-    tags: ["Ansible", "Linux", "IAM", "User Management", "Group Management", "Verification"],
-    link: "https://github.com/bilal7533-sec/bilal-sec/tree/main/projects/enterprise-linux-user-access-management",
-    details: {
-      objective: "Demonstrate repeatable local Linux account and group management as reviewable configuration rather than a series of manual shell commands.",
-      architecture: "Ansible control node → inventory target → become/sudo → managed Unix groups → users/private primary groups → supplementary membership → shell/home state → verification evidence.",
-      controls: ["Least-access home permissions", "Declared group membership", "Shell path validation", "Idempotent provisioning", "Check-mode preview", "Post-change assertions", "Credential hygiene", "CI syntax/lint checks"],
-      phases: "7 playbooks / shared user-and-group data / architecture and operations documentation / independent verification",
-      production: "Before enterprise rollout, integrate approved identity governance, UID/GID allocation, centralized identity (where required), secret management, change approval, audit logging and staged testing. The sample inventory is localhost-only."
-    }
-  },
-  {
     id: "iam-pam",
     title: "Enterprise Linux IAM / PAM / OpenLDAP",
     category: "IAM / PAM",
