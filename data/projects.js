@@ -1,24 +1,24 @@
 const PROJECTS = [
   {
-    id: "enterprise-ansible-fleet",
-    title: "Enterprise Ansible Linux Fleet — 30 Server Automation",
+    id: "enterprise-linux-user-access-management",
+    title: "Enterprise Linux User, Group & Access Management Automation with Ansible — Heterogeneous Architecture",
     category: "Infrastructure Automation",
     featured: true,
-    description: "Production-style Ansible reference architecture for a 30-server heterogeneous RHEL/Ubuntu estate spanning web, application, PostgreSQL/MariaDB, infrastructure, monitoring and backup tiers.",
-    problem: "Standardize secure Linux operations across a mixed operating-system fleet while keeping changes repeatable, reviewable and safe to roll out.",
-    stack: "Ansible • RHEL • Ubuntu • SSH • sudo • systemd • UFW/firewalld • PostgreSQL • MariaDB • GitHub Actions",
-    validation: "Inventory graphing, syntax checks, check mode, OS-specific execution, serial patching, handlers, service verification and CI linting.",
-    evidence: "30-node inventory, role structure, security baseline, SSH hardening, firewall controls, patch orchestration, verification playbook, architecture and security-control documentation.",
-    tags: ["Ansible","RHEL","Ubuntu","30 Servers","Linux Hardening","Patch Management"],
-    link: "https://github.com/bilal7533-sec/bilal-sec",
+    description: "Enterprise-style Ansible architecture for repeatable user and group lifecycle management across a heterogeneous Linux environment, with centralized desired-state data, controlled account attributes, group membership, shell and home-directory management, and independent verification.",
+    problem: "Standardize Linux identity and local access administration across mixed Linux hosts while reducing configuration drift and making account changes reviewable, repeatable and verifiable.",
+    stack: "Ansible • Ubuntu / RHEL concepts • Linux users and groups • UID/GID • SSH/sudo • YAML • getent • id • stat • Ansible Lint",
+    validation: "Playbook syntax checks, check-mode preview, CI linting, repeat-run idempotency review, user/group lookups, group-membership checks and home-directory ownership/mode assertions.",
+    evidence: "Seven user-management playbooks, shared vars/users.yml data, inventory, project README, architecture and operations notes, security-control context, test matrix and GitHub Actions workflow.",
+    tags: ["Ansible", "Linux", "Heterogeneous Architecture", "IAM", "User Management", "Group Management"],
+    link: "https://github.com/bilal7533-sec/bilal-sec/tree/main/projects/enterprise-linux-user-access-management",
     details: {
-      objective: "Build an enterprise-grade automation pattern that can manage a 30-server Linux estate consistently across web, application, database and operations tiers.",
-      architecture: "Control Node → SSH/sudo → common baseline → security hardening → SSH policy → firewall → tier roles → handlers → verification.",
-      controls: ["OS-aware automation","Rolling patching","Least privilege service accounts","SSH hardening","Firewall policy","Auditd","CI validation","Vault-ready secrets"],
-      phases: "30 managed servers / 15 Ubuntu + 15 RHEL / 6 web + 10 application + 6 database + 8 operations",
-      production: "Production extensions include MFA/PAM, centralized secrets, SIEM/logging, vulnerability management, HA databases, immutable backup and formal change-ticket integration."
+      objective: "Demonstrate data-driven and verifiable Linux user/group lifecycle operations through Ansible rather than unmanaged manual commands.",
+      architecture: "Ansible control node → inventory and SSH/sudo → Ubuntu/RHEL-oriented heterogeneous Linux targets → managed groups → user attributes → supplementary memberships → shell/home state → verification evidence.",
+      controls: ["Least-access home permissions", "Declared group membership", "Shell path validation", "Idempotent provisioning", "Check-mode preview", "Post-change assertions", "Credential hygiene", "CI syntax/lint checks"],
+      phases: "Seven playbooks / shared desired-state data / independent verification / operations and security documentation",
+      production: "The included inventory defaults to localhost for safety. Before multi-host production use, validate host-specific UID/GID availability, identity-provider integration, approvals, secrets management, staged rollout and audit logging."
     }
-  },
+  }
   {
     id: "enterprise-linux-user-access-management",
     title: "Enterprise Linux User, Group & Access Management Automation with Ansible",
