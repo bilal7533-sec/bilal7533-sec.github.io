@@ -18,7 +18,7 @@ const PROJECTS = [
       phases: "Seven playbooks / shared desired-state data / independent verification / operations and security documentation",
       production: "The included inventory defaults to localhost for safety. Before multi-host production use, validate host-specific UID/GID availability, identity-provider integration, approvals, secrets management, staged rollout and audit logging."
     }
-  }
+  },
   {
     id: "iam-pam",
     title: "Enterprise Linux IAM / PAM / OpenLDAP",
